@@ -18,7 +18,7 @@ st.markdown("##")
 pickle_in = open("classifier.pkl", "rb")
 model = pickle.load(pickle_in)
 
-# Kullanıcıdan elimizdeki değişkenlere göre girdi talep ederiz.
+# Kullanıcıdan girdi almak
 
 Gender_input = st.selectbox(
     label='Başvuru sahibinin cinsiyeti nedir?', options=("Erkek", "Kadın"))
@@ -96,7 +96,9 @@ def predict_(model, Gender_input, Married_input, Dependents_input, Education_inp
         pred = 'onaylandı.'
     
     return pred
+
 # Tahmin butonuna tıklandığında, kaydedilmiş modelden tahmin elde et ve yazdır
+
 st.markdown("---")
 
 st.markdown("<h1 style='text-align: left; font-size: 20px;'>Girilen bilgilere göre başvuru sahibine kredi verilip verilmemesini öğrenmek için aşağıdaki butona tıklayınız:</h1>", unsafe_allow_html=True)
